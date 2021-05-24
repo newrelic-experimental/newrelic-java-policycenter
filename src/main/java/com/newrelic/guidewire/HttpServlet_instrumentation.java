@@ -54,14 +54,13 @@ public abstract class HttpServlet_instrumentation {
 					String eventParam = request.getParameter(PARAM_EVENT_PARAM);
 					if(eventParam != null && !eventParam.isEmpty())
 					{
-						//NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, PARAM_EVENT_PARAM, eventParam);
-						NewRelic.setTransactionName("Custom", eventParam);
+						NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, PARAM_EVENT_PARAM, eventParam);
 						NewRelic.addCustomParameter(PARAM_EVENT_PARAM, eventParam);
 					}
 					else
 					{
-						//NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, PARAM_EVENT_SOURCE, eventSource);
-						NewRelic.setTransactionName("Custom", eventSource);
+						System.out.println("Setting transaciton name to " + eventSource);
+						NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, "Custom", eventSource.replace("-", "_"));
 					}
 					
 					if (eventSource.endsWith("_act")) {

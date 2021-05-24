@@ -1,0 +1,2 @@
+com/newrelic/guidewire/HttpServlet_instrumentation.java
+ com.newrelic.guidewire.HttpServlet_instrumentation

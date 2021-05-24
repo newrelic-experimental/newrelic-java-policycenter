@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7/"/>
+	<classpathentry sourcepath="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar" kind="lib" path="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/com.newrelic.agent.java/newrelic-api/6.5.0/870d9de8c1cc4d01a6ce4b43e1cd659c11d17f5d/newrelic-api-6.5.0-sources.jar" kind="lib" path="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/com.newrelic.agent.java/newrelic-api/6.5.0/476ffecea6ceeb855d40ac1a5e856beabaa7cb50/newrelic-api-6.5.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/com.newrelic.agent.java/newrelic-agent/6.5.0/62e4e372f8def65f8ab231ea5fe184caf8cc6b8d/newrelic-agent-6.5.0-sources.jar" kind="lib" path="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/com.newrelic.agent.java/newrelic-agent/6.5.0/a93476ae0471bd9840b5db0d84ea4bdf0a053e4a/newrelic-agent-6.5.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.12.3/9309b99550ea9e01c25dfb6080785e80ba0e73e4/jackson-core-2.12.3-sources.jar" kind="lib" path="C:/Users/PrakashReddy/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.12.3/deb23fe2a7f2b773e18ced2b50d4acc1df8fa366/jackson-core-2.12.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+</classpath>

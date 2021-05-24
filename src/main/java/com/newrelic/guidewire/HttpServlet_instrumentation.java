@@ -59,7 +59,6 @@ public abstract class HttpServlet_instrumentation {
 					}
 					else
 					{
-						System.out.println("Setting transaciton name to " + eventSource);
 						NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, "Custom", eventSource.replace("-", "_"));
 					}
 					

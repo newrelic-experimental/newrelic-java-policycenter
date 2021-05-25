@@ -44,7 +44,6 @@ public abstract class HttpServlet_instrumentation {
 
 	@Trace(dispatcher=true)
 	protected void service(HttpServletRequest request, HttpServletResponse response) {
-		Weaver.callOriginal();
 		try {
 			String wizardName = null;
 			if (request != null) {
@@ -59,7 +58,7 @@ public abstract class HttpServlet_instrumentation {
 					}
 					else
 					{
-						NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, "Custom", eventSource.replace("-", "_"));
+						NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.CUSTOM_HIGH, true, PARAM_EVENT_SOURCE, eventSource);
 					}
 					
 					if (eventSource.endsWith("_act")) {
@@ -72,20 +71,6 @@ public abstract class HttpServlet_instrumentation {
 
 				Map<String, String[]> parametersMap = request.getParameterMap();
 				for (String paramName : parametersMap.keySet()) {
-					/*
-					String paramDisplayName = selectedParametersMap.get(paramName);
-
-					if (paramDisplayName != null) {
-						String[] pValue = request.getParameterValues(paramName);
-						if ((pValue != null) && (pValue.length > 0)) {
-							String pValueString = String.join(" ", pValue);
-							if (!pValueString.isEmpty()) {
-								NewRelic.addCustomParameter(paramDisplayName, pValueString);
-							}
-						}
-					}
-					*/
-
 					if ((wizardName != null) && (paramName.startsWith(wizardName))) {
 						String jsonContent = request.getParameter(paramName);
 						if ((jsonContent != null) && (!jsonContent.isEmpty())) {
@@ -131,11 +116,11 @@ public abstract class HttpServlet_instrumentation {
 					}
 				}
 			}
-		} catch (Exception e) {
+		} catch (Throwable t) {
 			NewRelic.getAgent().getLogger().log(Level.SEVERE,
-					"Exception in NewRelic Guidewire extension " + e.getMessage());
-			e.printStackTrace();
+					"Exception in NewRelic Guidewire extension " + t.getMessage());
 		}
+		Weaver.callOriginal();
 	}
 
 	private void initJsonParametersMap() {

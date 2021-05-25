@@ -33,6 +33,9 @@ public abstract class HttpServlet_instrumentation {
 	private final static String PARAM_EVENT_PARAM = "eventParam";
 	
 	@NewField
+	private final static String SM_USER_KEY = "SM_USER";
+	
+	@NewField
 	private final static String ROOT_ATTRIBUTES_KEY = "rootAttributes";
 
 	@NewField
@@ -67,6 +70,11 @@ public abstract class HttpServlet_instrumentation {
 							wizardName = eventSource.substring(0, lengthWizardName);
 						}
 					}
+				}
+				
+				String username = request.getHeader(SM_USER_KEY);
+				if (username != null) {
+					NewRelic.addCustomParameter(SM_USER_KEY, username);
 				}
 
 				Map<String, String[]> parametersMap = request.getParameterMap();

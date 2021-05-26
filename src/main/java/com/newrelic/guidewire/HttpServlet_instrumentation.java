@@ -119,6 +119,9 @@ public abstract class HttpServlet_instrumentation {
 										}
 									}
 								}
+							} catch (Throwable t) {
+								NewRelic.getAgent().getLogger().log(Level.SEVERE,
+										"Parse Exception in NewRelic Guidewire extension " + t.getMessage());
 							}
 						}
 					}
